@@ -1,11 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import Btn from './components/Btn';
 
 export default function App() {
-  return (
+
+  const [number, setNumber] = useState(0);
+
+  const incrementar = () => {
+    setNumber( number + 1 );
+  }
+
+  const disminuir = () => {
+    setNumber( number - 1 );
+  }
+
+  return ( 
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+      <Text>Learning React Native :D</Text>
+      <Text>{number}</Text>
+      <Btn style={styles.margin} action={incrementar} text={'Incrementar'}></Btn>
+      <Btn style={styles.margin} action={disminuir} text={'Disminuir'}></Btn>
     </View>
   );
 }
@@ -17,4 +33,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  margin: {
+    marginBottom: 10,
+    marginTop: 10,
+  }
 });
