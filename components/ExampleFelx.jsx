@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from "react-native"
 import Btn from "./Btn"
 
-const ExampleFelx = () => {
+const ExampleFelx = ({action}) => {
   return (
     <>
       <View style={styles.container}>
@@ -12,7 +12,7 @@ const ExampleFelx = () => {
 
         <View style={styles.content}>
             <Text>Content</Text>
-            <Btn>To counter</Btn>
+            <Btn text={"To counter"}></Btn>
         </View>
 
       </View>
